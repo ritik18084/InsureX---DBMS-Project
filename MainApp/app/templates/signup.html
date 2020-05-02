@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Insure-X</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<!--===============================================================================================-->
+
+<style>
+.wrap-input100 {
+	margin-bottom: 4%;
+}
+.input100 {
+	width: 50%;
+}
+.focus-input100 {
+	width: 50%;
+}
+
+
+.input-center {	
+	display: block;
+    margin : 0 auto;
+}
+
+.wrap-login100 {
+	padding: 88px 130px 33px 95px;
+}
+
+.input-span {
+  left: 50%;
+  margin-left: -25%;
+}
+
+
+.input-radio-container {
+	display: inline;
+	vertical-align: top;
+	margin-left: 9%;
+	margin-right: 7%;
+}
+
+.radio-div {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 4%;
+}
+
+.input-radio {
+	border: 0px;
+	margin-left: 2%;
+	height: 18px;
+	width: 10%;
+}
+
+.select-label {
+	margin-top: 1em;
+}
+
+.select-div {
+	width: 100%;
+} 
+
+.select-list {
+
+	position: absolute;
+	display: inline-block;
+	left: 50%;
+	width: 50%;
+	margin: 0 auto;
+	margin-left: -25%;
+}
+
+
+.gender-label {
+	font-size: 1.2em; 
+	display: inline;
+}
+
+.login100-form-btn {
+	width: 50%
+}
+
+@media (max-width: 992px) {
+  .wrap-login100 {
+    padding: 88px 90px 33px 85px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap-login100 {
+    padding: 60px 80px 33px 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap-login100 {
+    padding: 55px 15px 33px 15px;
+  }
+}
+
+</style>
+</head>
+<body>
+	
+	<div class="limiter">
+		<!-- Navigation Bar -->
+
+		<nav class="navbar navbar-expand-sm bg-light fixed-top">
+			<div class="container-fluid">
+			  <div class="navbar-header">
+				<a class="navbar-brand" href="{{url_for('main.index')}}">
+					Insure-X
+				</a>
+			  </div>
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user"></i> Sign Up</a></li>
+				<li class="nav-item"><a class="nav-link" href="{{url_for('auth.loginPage')}}"><i class="fa fa-sign-in"></i> Login</a></li>
+			  </ul>
+			</div>
+		</nav>
+
+		<div class="container-login100">
+			<div class="wrap-login100" style="display: block;">
+			
+				<form validate-form" action="/signup" method="POST">
+					<span class="login100-form-title">
+						Sign up
+					</span>
+					
+					{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						<div class="alert alert-danger">
+							{{ messages[0] }}
+						</div>
+					{% endif %}
+					{% endwith %}
+					
+
+					<div class="wrap-input100 validate-input " data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100 input-center"  type="text" name="email" placeholder="Email" title="Email" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span> 
+					</div>
+
+					
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100 input-center" type="password" name="password" minlength="4" placeholder="Password" title="Password should be at least 4 characters long" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Correct Phone Number is required">
+						<input class="input100 input-center" type="tel" pattern="[0-9]{10}" name="phone" placeholder="Phone" title="Phone No. Example : 9999091111" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100 input-center" pattern="^[A-Za-z]+\s[A-Za-z]+$" minlength="3" type="text" name="name" placeholder="Name" required title="Enter Your Full Name.">
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100 input-center" type="text" minlength="3" maxlength="12" name="username" placeholder="Username" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-user-circle" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Aadhar No is required">
+						<input class="input100 input-center" type="text" name="aadhar" pattern="[0-9]{12}" title="Enter your 12 digit Aadhar No" placeholder="Aadhar No" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-id-card" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "PAN No is required">
+						<input class="input100 input-center" type="text" name="pan" pattern="[0-9]{10}" title="Enter your 10 digit PAN No"  placeholder="PAN No" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-id-badge" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Date Of Birth is required">
+						<input class="input100 input-center" type="date" name="dob" placeholder="DOB" min="1910-01-01" max="2002-04-30" required>
+						<span class="focus-input100 input-span"></span>
+						<span class="symbol-input100 input-span">
+							<i class="fa fa-birthday-cake" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 radio-div validate-input" data-validate = "Please provide gender info">
+						<span class="input-radio-container" >
+							<label for="female" class="gender-label">Female</label>
+							<input class="input-radio" id="female" type="radio" value="female" name="sex" checked>
+						</span>
+						<span class="input-radio-container" >
+							<label for="male" class="gender-label">Male</label>
+							<input class="input-radio" id="male" type="radio" value="male" name="sex" >
+						</span>
+					</div>
+
+					<div class="wrap-input100 select-div">
+						<label for="branchselect" class="select-label"> Select Branch : </label>
+						<select id="branchselect" class="input100 input-center select-list" required name="branch" title="Select Branch">
+							{% with branches=branchDetails%}
+							{% for branch in branches %}
+								<option value="{{branch[5]}}">{{branch[0]}}</option>
+							{% endfor %}
+							{% endwith %}
+						</select>
+						<!-- <span class="focus-input100 input-span input-span-select"></span>
+						<span class="symbol-input100 input-span input-span-select">
+							<i class="fa fa-list" aria-hidden="true"></i>
+						</span> -->
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn input-center">
+							Sign up
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="DBMS_Group20">
+  <title>InsureX Dashboard</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/static/assets/img/brand/favicon.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="/static/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Page plugins -->
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="/static/assets/css/argon.css?v=1.2.0" type="text/css">
+</head>
+
+<body>
+  <!-- Sidenav -->
+  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header  align-items-center">
+        <a class="navbar-brand" href="javascript:void(0)">
+          <img src="/static/assets/img/brand/black.png" class="navbar-brand-img" alt="...">
+        </a>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Nav items -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('admin.dashboard')}}">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('admin.dashboardBranchEmp')}}">
+                <i class="ni ni-atom text-orange"></i>
+                <span class="nav-link-text">Employee Details</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('admin.dashboardDeactivateAcc')}}">
+                <i class="ni ni-fat-delete text-primary"></i>
+                <span class="nav-link-text">Remove Account</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('admin.dashboardAddAgent')}}">
+                <i class="ni ni-fat-add text-yellow"></i>
+                <span class="nav-link-text">Add Agent</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{url_for('admin.dashboardAddEmp')}}">
+                <i class="ni ni-fat-add text-green"></i>
+                <span class="nav-link-text">Add Employee</span>
+              </a>
+            </li>
+          </ul>
+          <!-- Divider -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Main content -->
+  <div class="main-content" id="panel">
+    <!-- Topnav -->
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <!-- Navbar links -->
+          <ul class="navbar-nav align-items-center  ml-md-auto ">
+            <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="/static/assets/img/theme/team-4.jpg">
+                  </span>
+                  <div class="media-body  ml-2  d-none d-lg-block">
+                    <span class="mb-0 text-sm  font-weight-bold">{{ session['username'] }}</span>
+                  </div>
+                </div>
+              </a>
+              <div class="dropdown-menu  dropdown-menu-right ">
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+                <a href="{{url_for('admin.dashboard')}}" class="dropdown-item">
+                  <i class="ni ni-single-02"></i>
+                  <span>My profile</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="{{url_for('auth.logout')}}" class="dropdown-item">
+                  <i class="ni ni-user-run"></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <!-- Header -->
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Register Employee</h6>
+              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="#">Insure-X</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">AddEmployee</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col-xl-8 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Add Employee </h3>
+                </div>
+              </div>
+            </div>
+            <form action="/addStaff" method="POST">
+            <div class="card-body"> 
+              {% with messages = get_flashed_messages(category_filter=["message"]) %}
+              {% if messages %}
+                <div class="alert alert-danger">
+                  {{ messages[0] }}
+                </div>
+              {% endif %}
+              {% endwith %}
+              {% with messages = get_flashed_messages(category_filter=["success"]) %}
+              {% if messages %}
+                <div class="alert alert-success">
+                  {{ messages[0] }}
+                </div>
+              {% endif %}
+              {% endwith %}
+              {% with messages = get_flashed_messages() %}
+              {% endwith %}
+                <h6 class="heading-small text-muted mb-4">Account information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Username</label>
+                        <input type="text" id="input-username" class="form-control" placeholder="Username" minlength="3" maxlength="12" required name="username">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email" data-validate = "Valid email is required: ex@abc.xyz">Email address</label>
+                        <input type="email" id="input-email" class="form-control" placeholder="jesse@example.com" required name="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-phone">Phone</label>
+                        <input type="text" id="input-phone" class="form-control" placeholder="9899901910" pattern="[0-9]{10}" required name="phone">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-pass">Password</label>
+                        <input type="password" id="input-pass" class="form-control" required name="password" minlength="4">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <!-- Address -->
+                <h6 class="heading-small text-muted mb-4">Personal Information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-name">Full Name</label>
+                        <input id="input-name" class="form-control" placeholder="Ayaan Kakkar" type="text" required name="name" pattern="^[A-Za-z]+\s[A-Za-z]+$" minlength="3">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-salary">Salary</label>
+                        <input type="text" id="input-salary" class="form-control" placeholder="30000" name="salary" required pattern="[0-9]+" maxlength="15" minlength="2">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-aadhar">Aadhar No</label>
+                        <input type="text" id="input-aadhar" class="form-control" placeholder="783800010213" pattern="[0-9]{12}" minlength="12" maxlength="12" required name="aadhar" >
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-pan">PAN</label>
+                        <input type="text" id="input-pan" class="form-control" placeholder="4562178020" minlength="10" maxlength="10" pattern="[0-9]{10}" required name="pan">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-department">Department</label>
+                        <input type="text" id="input-department" class="form-control" maxlength="15" name="dept">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-position">Position</label>
+                        <input type="text" id="input-position" class="form-control" maxlength="15" name="pos">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-branch">Branch</label>
+                        <select id="input-branch" class="form-control" name="branch" required>
+                          {% with branches=branchDetails%}
+                          {% for branch in branches %}
+                            <option value="{{branch[5]}}">{{branch[0]}}</option>
+                          {% endfor %}
+                          {% endwith %}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="card-footer py-4"> 
+              <div class="col-12 text-right">
+                <button class="btn btn-primary">Register</a>
+              </div>       
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+              &copy; 2020 <a href="#" class="font-weight-bold ml-1">Insure-X</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <li class="nav-item">
+                <a href="https://github.com/ritik18084/DBMS_Group20" class="nav-link" target="_blank">GitHub</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://github.com/ritik18084/DBMS_Group20" class="nav-link" target="_blank">Facebook</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://github.com/ritik18084/DBMS_Group20" class="nav-link" target="_blank">Twitter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="/static/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="/static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="/static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <!-- Optional JS -->
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <!-- Argon JS -->
+  <script src="/static/assets/js/argon.js?v=1.2.0"></script>
+  
+</body>
+
+</html>

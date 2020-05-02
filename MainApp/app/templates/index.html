@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insure-X</title>
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+    <link rel="stylesheet" href="/static/css/main-styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+	<a name="top"></a>
+	<div class="container-fluid">
+		
+		<!-- Navigation Bar -->
+
+		<nav class="navbar navbar-default bg-dark navbar-fixed-top">
+			<div class="container-fluid " style="font-family: 'Poppins', sans-serif;">
+			  <div class="navbar-header" style="margin-left: 1%;">
+				<a class="navbar-brand" style="font-size: 1.5em;" href="#">
+					Insure-X
+				</a>
+			  </div>
+			  <ul class="nav navbar-nav navbar-right" style="margin-right: 1%;">
+				<li><a href="{{url_for('auth.signupPage')}}"><i class="fa fa-user"></i> Sign Up</a></li>
+				<li><a href="{{url_for('auth.loginPage')}}"><i class="fa fa-sign-in"></i> Login</a></li>
+			  </ul>
+			</div>
+		</nav>
+
+		<!-- Top Image-->
+
+		<div id="background">
+			<div id="content-box">
+				<div style="width: 100%; min-height: 40px;">
+					<span id="content-1">
+						LIVE YOUR DREAM
+					</span>
+					<span>
+						<hr id="hr">
+					</span>
+				</div>
+				<br>
+				<br>
+				<div id = "content-2">
+					COUNT ON US, WE'LL KEEP YOUR TRUST
+				</div>
+				<div>
+					<section id="content-3">
+						No one can surely predict the future. But we can protect it.
+					</section>
+				</div>
+				<div>
+					<button class="button">
+						<a id="button" href="{{url_for('auth.signupPage')}}">FIND AN AGENT</a>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="feature-heading">
+			AWARD WINNING COMPANY
+		</div>
+	</div>
+
+		<!-- Top Image Tag Close -->
+
+
+
+		<!-- Feature images-main -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-6 feature-window">
+				<section class="features-1">
+					<div class="hover-content-heading" style="font-size: 2em;">
+						TRUSTWORTHY COMPANY
+					</div>
+					<div class="hover-content-heading hover-content">
+						We are committed to providing the best experience
+					</div>
+				</section>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6 feature-window">
+				<section class="features-2">
+					<div class="hover-content-heading" style="font-size: 2em;">
+						ANYTIME CANCELLATION
+					</div>
+					<div class="hover-content-heading hover-content">
+						You drive your insurance
+					</div>
+				</section>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6 feature-window">
+				<section class="features-3">
+					<div class="hover-content-heading" style="font-size: 2em;">
+						MONEY BACK GUARANTEE
+					</div>
+					<div class="hover-content-heading hover-content">
+						Your money is secure. Cancel anytime and get a complete refund
+					</div>
+				</section>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6  feature-window">
+				<section class="features-4">
+					<div class="hover-content-heading" style="font-size: 2em;">
+						NO POLICY FEES COMMITTED
+					</div>
+					<div class="hover-content-heading hover-content">
+						We guarantee as long as you own
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- Features images-main end -->
+	
+
+
+	<!-- Table Having Insurances -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 table-content">
+						Better Insurance for everyone
+						<hr class="visible-xs" style="background: black; width:60%; height:5px; margin-left: 0;">
+			</div>
+			<div class="col-sm-6 table-content-2">
+					One-Stop Solution for all types of insurances.<br>
+					Choose what suits you best.
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 150px;">
+			<div class="col-sm-6">
+				<section id="insurance-box">
+					<section id="insurance-heading">Vehicle Insurance</section>
+					<section>
+						<section><img src="/static/images-main/car.jpg" class="image"></section>
+						<span>Aliquam posuere gdfvb dbcsdhbcdfvb svcshdbcdj  behrbh ubfehbfe ubfhvu hfuyerbfuey uyfgeub ryfveruy reyfr</span>
+					</section>
+				</section>
+			</div>
+			<div class="col-sm-6">
+				<section id="insurance-box">
+					<section id="insurance-heading">Life Insurance</section>
+					<section>
+						<section><img src="/static/images-main/life.jpg" class="image"></section>
+						<span>Aliquam posuere gdfvb dbcsdhbcdfvb svcshdbcdj  behrbh ubfehbfe ubfhvu hfuyerbfuey uyfgeub ryfveruy reyfr</span>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<section id="insurance-box">
+					<section id="insurance-heading">Medical Insurance</section>
+					<section>
+						<section><img src="/static/images-main/medical.jpg" class="image"></section>
+						<span>Aliquam posuere gdfvb dbcsdhbcdfvb svcshdbcdj  behrbh ubfehbfe ubfhvu hfuyerbfuey uyfgeub ryfveruy reyfr</span>
+					</section>
+				</section>
+			</div>
+			<div class="col-sm-6">
+				<section id="insurance-box">
+					<section id="insurance-heading">Home Insurance</section>
+					<section>
+						<section><img src="/static/images-main/home.jpg" class="image"></section>
+						<span>Aliquam posuere gdfvb dbcsdhbcdfvb svcshdbcdj  behrbh ubfehbfe ubfhvu hfuyerbfuey uyfgeub ryfveruy reyfr</span>
+					</section>
+				</section>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-sm-6">
+				<section id="insurance-box">
+					<section id="insurance-heading">Travel Insurance</section>
+					<section>
+						<section><img src="/static/images-main/travel.jpg" class="image"></section>
+						<span>Aliquam posuere gdfvb dbcsdhbcdfvb svcshdbcdj  behrbh ubfehbfe ubfhvu hfuyerbfuey uyfgeub ryfveruy reyfr</span>
+					</section>
+				</section>
+			</div>
+			<div class="col-xs-3"></div>
+		</div>
+	</div>
+
+		<!-- Table ends -->
+
+
+		<!-- Find an Agent -->
+	
+	<div class="container-fluid">
+		<div id="background1">
+			<div class="agent-heading" style="padding-top: 30px; margin-bottom: -15px;">
+				NOT SURE WHAT YOU NEED?
+			</div>
+			<div class="agent-heading">
+				<br>FIND AN AGENT NOW
+			</div>
+			<br>
+			<br>
+			
+			<div class="container" style="width:80%;">
+				<div class="col-sm-6">
+					<div class="box" style="padding-top: 50px;">
+						<span class="glyphicon glyphicon-earphone" style="font-size: 30px; color:white;"></span>
+						<span id="phone">Call Now:</span>
+						<div id="phone" style="font-weight: bold; padding-left:0px;">
+							+91 99999 99999
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="box" style="padding-top: 50px;">
+						<span class="email">Sign Up for emails:</span>
+						<input type="text" id="email-field" placeholder="Your Email">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="background2">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<section class="input">
+							<section class="input-content">
+								<span class="email" style="color: #0D459B">Sign up by filling out your details</span>
+								<br> <br>
+								<input type="text" id="input-field" placeholder="YOUR NAME">
+								<input type="text" id="input-field" placeholder="E-MAIL">
+								
+								<button class="button2">
+									<a id="button2" href="{{url_for('auth.signupPage')}}">START SAVING TODAY</a>
+								</button>
+								<div class="sign-in-option">
+									<span style="float: right;"><a href="{{url_for('auth.loginPage')}}">SIGN IN<a></span>
+									<span style="float: right; font-weight: normal; color: #95979A">Already a member?</span>
+								</div>
+							</section>
+						</section>
+					</div>
+					<div class="col-sm-6">
+						<section class="input-content">
+							<div class="ready">READY TO START SAVING MONEY?</div>
+							<div class="audi"><img src="/static/images-main/house.png" class="img-responsive responsive" alt="audi"></div>
+						</section>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<footer class="panel-footer" id="foot">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4 copyright">
+					<div>&copy; 2020, Insure-X</div>
+					<div>All rights reserved by Insure-X</div>
+				</div>
+				<div class="col-sm-4 logo">
+					<img src="/static/images-main/logo.png">
+					<div>
+						<a href="#top" style="text-decoration: none;">Back to top</a>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<section id="icons">
+						<a href="#"><img src="/static/images-main/fb.png"></a>
+						<a href="#"><img src="/static/images-main/gmail.png"></a>
+						<a href="#"><img src="/static/images-main/twitter.png"></a>
+					</section>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
